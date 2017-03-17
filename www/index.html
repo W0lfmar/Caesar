@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--HTML5 doctype-->
+<html>
+
+<head>
+
+    <title>Flip View Template</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link rel="stylesheet" type="text/css" href="lib/appframework/icons.css" />
+    <link rel="stylesheet" type="text/css" href="lib/appframework/af.ui.css" />
+
+    <script type="text/javascript" charset="utf-8" src="lib/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="lib/fastclick.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="lib/appframework/appframework.ui.min.js"></script>
+        
+    <script src='cordova.js'></script>
+    <script src="js/caesar.js"></script>
+
+</head>
+
+<body>
+
+    <div id="splashscreen" class='ui-loader heavy'>
+        App Framework - Flip View
+        <br>
+        <br>
+        <span class='ui-icon ui-icon-loading spin'></span>
+        <h1>Starting app</h1>
+    </div>
+
+    <div class="view" id="mainview">
+        <header>
+            <h1>Flip View</h1>
+            <a href="#backpage" data-transition="flip" class="button icon bug" style="float:right" onclick="cifrar()"></a>
+        </header>
+
+        <div class="pages">
+            <!-- main panel -->
+            <div class="panel" title="Cifrar" id="mainpage" data-footer="none" selected="true">
+                <form>
+                    <textarea id="texto_cifrar" draggable="auto" placeholder="Introduce aquí el texto a cifrar" rows="5" cols="50"></textarea>
+                    <input type="number" id="clave_cifrar" placeholder="clave" />                
+                </form>
+                
+            </div>
+        </div>
+        
+    </div>    
+
+    <div class="view" id="backview">
+        <header>
+            <h1>Settings</h1>
+            <a href="#mainpage" data-transition="flip" class="button icon key" style="float:right" onclick="descifrar()"></a>
+        </header>
+
+        <div class="pages">
+    
+            <!-- back panel -->
+            <div class="panel" title="Descifrar" id="backpage" data-footer="none">
+                <form>
+                    <textarea id="texto_desc" draggable="auto" rows="5" cols="50" placeholder="Introduce aquí el texto a descifrar"></textarea>
+                    <input type="number" id="clave_desc" placeholder="clave" />             
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
